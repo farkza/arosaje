@@ -1,0 +1,13 @@
+myapp/
+|--- backend/
+|    |--- Dockerfile
+|    |--- requirements.txt
+|    |--- main.py
+|
+|--- frontend/
+|    |--- Dockerfile
+|    |--- build/ (contient les fichiers de build de React)
+|    |--- src/
+|         |--- (votre code React)
+|
+|--- docker-compose.yml
