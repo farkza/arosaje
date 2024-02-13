@@ -1,20 +1,17 @@
-# Utilisez l'image de Node.js comme base
-FROM node:14
+# Utiliser une image de base pour Node.js
+FROM node:14-alpine
 
 # Définir le répertoire de travail dans le conteneur
-WORKDIR /app/frontend
+WORKDIR /app
 
-# Copier le fichier package.json dans le conteneur
-COPY package.json .
-
-# Installer les dépendances du frontend
-RUN npm install
-
-# Copier le contenu du répertoire actuel dans le conteneur
+# Copier les fichiers nécessaires
 COPY . .
 
-# Construire l'application React
-RUN npm run build
+# Installer les dépendances
+RUN npm install
 
-# Commande par défaut pour exécuter le serveur frontend (c'est généralement inutile pour une application React, mais nous le gardons pour la cohérence)
+# Exposer le port du serveur
+EXPOSE 3000
+
+# Commande pour démarrer l'application
 CMD ["npm", "start"]

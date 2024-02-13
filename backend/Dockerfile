@@ -1,17 +1,17 @@
-# Utilisez l'image de Python comme base
-FROM python:3.9
+# Utiliser une image de base pour Python
+FROM python:3.9-slim
 
 # Définir le répertoire de travail dans le conteneur
-WORKDIR /app/backend
+WORKDIR /app
 
-# Copier le fichier requirements.txt dans le conteneur
-COPY requirements.txt .
-
-# Installer les dépendances Python
-RUN pip install -r requirements.txt
-
-# Copier le contenu du répertoire actuel dans le conteneur
+# Copier les fichiers nécessaires
 COPY . .
 
-# Commande par défaut pour exécuter l'application backend avec Uvicorn
+# Installer les dépendances
+RUN pip install -r requirements.txt
+
+# Exposer le port du serveur
+EXPOSE 8000
+
+# Commande pour démarrer l'application
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
