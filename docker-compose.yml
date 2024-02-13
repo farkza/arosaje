@@ -1,23 +1,18 @@
-version: '3'
+version: '3.8'
 
 services:
-  backenda:
-    build: ./backend
-    volumes:
-      - ./backend:/app/backend
-    ports:
-      - "8000:8000"
-    depends_on:
-      - mongodb
-
-  frontenda:
+  frontend:
     build: ./frontend
-    volumes:
-      - ./frontend:/app/frontend
     ports:
       - "3000:3000"
+    volumes:
+      - ./frontend:/app
 
-  mongodba:
-    image: mongo
+  backend:
+    build: ./backend
     ports:
-      - "192.0.0.2:27017:27017"
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+
+      
