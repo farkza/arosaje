@@ -1,0 +1,10 @@
+.plantes-container {
+    display: flex;
+    flex-wrap: wrap; /* Pour permettre le retour à la ligne si nécessaire */
+  }
+  
+  .plante {
+    width: 200px; /* Largeur de chaque plante */
+    margin: 0 10px 10px 0; /* Marge entre les plantes */
+  }
+  
