@@ -1,8 +1,8 @@
 from fastapi.testclient import TestClient
-from backend import app
+from backend.main import app
 import pytest
 
-TEST_DATABASE_PATH = "test_arosaje.db"
+TEST_DATABASE_PATH = "arosaje.db"
 
 @pytest.fixture(scope="module")
 def test_app():
@@ -15,9 +15,9 @@ def test_read_root(test_app):
     assert response.json() == {"message": "Bienvenue sur mon API FastAPI"}
 
 def test_get_plantes_from_db(test_app):
-    response = test_app.get("/get_plantes_from_db")
-    assert response.status_code == 200
-    assert response.json().get("plantes") is not None
+   response = test_app.get("/get_plantes_from_db")
+   assert response.status_code == 200
+   assert response.json().get("plantes") is not None
 
 def test_test_db_connection(test_app):
     response = test_app.get("/test_db_connection")
