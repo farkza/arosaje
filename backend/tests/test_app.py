@@ -1,6 +1,7 @@
+from fastapi import FastAPI
 from fastapi.testclient import TestClient
-from backend.main import app
 
+app = FastAPI()
 client = TestClient(app)
 
 def test_read_root():
