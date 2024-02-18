@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from main import app
+from backend.main import app
 
 # Utilisez une base de données de test séparée si nécessaire
 TEST_DATABASE_PATH = "test_arosaje.db"
