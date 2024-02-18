@@ -28,7 +28,9 @@ jobs:
       run: npm run build --prefix frontend
       
     - name: Run backend tests
-      run: pytest
+      run: 
+      cd backend
+      pytest
       
     - name: Deploy containers
       run: |
