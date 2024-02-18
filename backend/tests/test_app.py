@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from main import app
+from backend.main import app
 import pytest
 
 TEST_DATABASE_PATH = "test_arosaje.db"
