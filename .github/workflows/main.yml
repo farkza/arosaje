@@ -21,7 +21,8 @@ jobs:
         
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        cd backend
+        pip install -r backend/requirements.txt
         npm install --prefix frontend
         
     - name: Build frontend
