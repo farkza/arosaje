@@ -32,5 +32,5 @@ jobs:
       
     - name: Deploy containers
       run: |
-        docker-compose up -d --build
+        docker-compose up -d
         docker-compose exec backend python manage.py migrate
