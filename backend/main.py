@@ -12,7 +12,7 @@ app = FastAPI()
 DATABASE_PATH = "arosaje.db"  # Assurez-vous que le chemin est correct
 
 # Clé secrète pour signer les jetons JWT
-SECRET_KEY = "votre_clé_secrète"
+SECRET_KEY = "arosaje"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30  # Durée de validité de l'access token
 
