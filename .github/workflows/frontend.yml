@@ -1,9 +1,9 @@
-name: CI/CD
+name: CI/CD Frontend
 
 on:
   push:
     branches:
-    #  - main
+      - main
       - feature/ci
 
 jobs:
@@ -13,19 +13,13 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.10'
-        
+
     - name: Install dependencies
       run: |
-        pip install -r backend/requirements.txt
         npm install --prefix frontend
         
     - name: Run backend tests
-      run: pytest 
+      run: react-scripts test
       
     - name: Deploy containers
       run: |
