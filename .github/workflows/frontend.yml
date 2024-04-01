@@ -18,8 +18,8 @@ jobs:
       run: |
         npm install --prefix frontend
         
-    - name: Run backend tests
-      run: react-scripts test
+    - name: Run frontend tests
+      run: npm react-scripts test
       
     - name: Deploy containers
       run: |
