@@ -1,0 +1,73 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% de la hauteur de la vue */
+    background-color: #181413; /* Couleur de fond */
+  }
+  
+  .login-content {
+    text-align: center;
+    color: white;
+  }
+  
+  .logo_login {
+    width: 150px; /* Taille du logo */
+  }
+  
+  .appName_login {
+    color: #A2D64D; /* Couleur de l'application */
+    font-size: 70px; /* Taille du nom de l'application */
+    margin-bottom: -10px; /* Marge en bas */
+    font-weight: 900;
+  }
+  
+  .secondary-title {
+    color: white; /* Couleur du titre secondaire */
+    font-size: 30px; /* Taille du titre secondaire */
+    margin-bottom: 40px; /* Marge en bas */
+    font-weight: 900;
+  }
+  
+  .input-container {
+    position: relative;
+    margin-bottom: 20px; /* Marge en bas */
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 300px; /* Largeur des champs de saisie */
+    padding: 20px;
+    border-radius: 35px;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    outline: none;
+    padding-left: calc(20px + 10%);
+    background-position: 10% center;
+    background-repeat: no-repeat;
+  }
+  
+  input[type="text"]::placeholder,
+  input[type="password"]::placeholder {
+    color: black; /* Couleur du placeholder */
+  }
+  
+  .login-button {
+    background-color: #A2D64D; /* Couleur de fond du bouton */
+    width: 350px; /* Largeur des champs de saisie */
+    color: black; /* Couleur du texte */
+    font-size: 17px; /* Taille de la police */
+    font-weight: 700;
+    padding: 15px 30px; /* Remplissage */
+    border: none; /* Pas de bordure */
+    border-radius: 30px; /* Bord arrondi */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.3s ease; /* Transition sur le changement de couleur de fond */
+  }
+  
+  .login-button:hover {
+    background-color: #8ccf7d; /* Couleur de fond au survol */
+  }
+  
