@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Login.css';
 import logo from '../img/arosaje.png';
@@ -6,16 +7,17 @@ import userIcon from '../img/user.svg';
 import passwordIcon from '../img/pwd.svg';
 
 function Login() {
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // État pour suivre la connexion
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Vérifier si l'utilisateur est déjà connecté au chargement de la page
     const accessToken = localStorage.getItem('accessToken');
     if (accessToken) {
-      setIsLoggedIn(true); // Définir l'état de connexion à vrai s'il y a un token
+      setIsLoggedIn(true);
     }
   }, []);
 
@@ -26,16 +28,17 @@ function Login() {
         password: password
       });
       const accessToken = response.data.access_token;
-      // Stocker l'access token dans le localStorage ou dans un état de l'application React
       localStorage.setItem('accessToken', accessToken);
-      setIsLoggedIn(true); // Définir l'état de connexion à vrai après une connexion réussie
-      // Rediriger l'utilisateur vers une autre page après la connexion réussie
-      // Remplacez '/dashboard' par l'URL de la page vers laquelle vous souhaitez rediriger l'utilisateur
-      window.location.href = '/';
+      setIsLoggedIn(true);
+      navigate('/explorer');
     } catch (error) {
       setError('Identifiants incorrects');
     }
   };
+
+  if (isLoggedIn) {
+    navigate('/explorer');
+  }
 
   return (
     <div className="login-container">
@@ -43,7 +46,6 @@ function Login() {
         <img src={logo} alt="Logo" className="logo_login" />
         <h1 className="appName_login">Arosaje</h1>
         <h2 className="secondary-title">Connectez-vous</h2>
-        {isLoggedIn && <p style={{ color: 'green' }}>Vous êtes connecté</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
         {!isLoggedIn && (
           <div>
