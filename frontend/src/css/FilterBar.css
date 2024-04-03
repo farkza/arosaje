@@ -1,0 +1,55 @@
+/* FilterBar.css */
+
+.filter-bar {
+    width: 60%; /* Réduire la largeur */
+    height: 70px; /* Ajouter une hauteur fixe ou ajustez selon vos besoins */
+    margin: 0 auto; /* Centrage horizontal */
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Réduire le padding pour ajuster la hauteur */
+    border-radius: 10px; /* Arrondir les bords */
+    box-shadow: 0px 56px 48px rgba(0, 0, 0, 0.1); /* Ajouter une ombre portée */
+}
+
+.filter-block {
+    flex: 1;
+    text-align: center;
+    margin-top: 5px; /* Ajuster la marge pour rapprocher le contenu du titre */
+}
+
+.filter-block:first-child {
+    margin-left: 0; /* Réinitialiser la marge gauche pour le premier bloc */
+}
+
+.title {
+    color: #979DAD;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 5px; /* Ajuster la marge pour rapprocher les titres des contenus */
+}
+
+.separator {
+    border-left: 1px solid #979DAD;
+    height: 40px; 
+    opacity: 0.3; /* Utiliser une valeur entre 0 et 1 pour l'opacité */
+}
+
+.content {
+    color: #000000;
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: -5px; /* Ajuster la marge pour rapprocher les contenus des titres */
+}
+
+.filter-button {
+    background-color: #A1D64E;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 10px 20px; /* Ajuster le padding pour réduire la taille du bouton */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

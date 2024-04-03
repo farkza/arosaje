@@ -1,25 +1,50 @@
-// Navbar.js
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../css/Navbar.css';
 import logo from '../img/arosaje.png';
+import searchIcon from '../img/search.svg';
+import profileIcon from '../img/profile.svg';
 
-function Navbar() {
+function Navbar({ isLoggedIn, handleLogout }) {
+  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+
+      if (scrollTop > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-left">
-        <Link to="/" className="navbar-logo">
-            <img src={logo} alt="Arosaje" />
-        </Link>
-        <ul className="navbar-menu">
-          <li><Link to="/explorer">Explorer</Link></li>
-          <li><Link to="/plantes">Plantes</Link></li>
-          <li><Link to="/messagerie">Messagerie</Link></li>
-          <li><Link to="/faq">FAQ</Link></li>
+        <img src={logo} alt="Arosaje Logo" className="logo" />
+        <h1 className={`brand ${scrolled ? 'white-text' : ''}`}>Arosaje</h1>
+      </div>
+      <div className="navbar-center">
+        <ul className="menu">
+          <li><Link to="/explorer" className={location.pathname === "/explorer" && isLoggedIn ? "selected" : ""}>Explorer</Link></li>
+          <li><Link to="/plantes" className={location.pathname === "/plantes" ? "selected" : ""}>Plantes</Link></li>
+          <li><Link to="/messagerie" className={location.pathname === "/messagerie" ? "selected" : ""}>Messagerie</Link></li>
+          <li><Link to="/faq" className={location.pathname === "/faq" ? "selected" : ""}>FAQ</Link></li>
         </ul>
       </div>
-      <div className="navbar-right">
-        <span>Nom de l'utilisateur</span>
+      <div className={`navbar-right ${scrolled ? 'white-text' : ''}`}>
+        <img src={searchIcon} alt="Search Icon" className={`icon ${scrolled ? 'white-icon' : ''}`} />
+        <img src={profileIcon} alt="Profile Icon" className={`icon ${scrolled ? 'white-icon' : ''}`} />
+        {isLoggedIn && <button className={`brand ${scrolled ? 'white-text' : ''}`} onClick={handleLogout}>Déconnexion</button>}
       </div>
     </nav>
   );

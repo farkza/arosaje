@@ -1,10 +1,54 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header-img {
+  width: 100%;
+}
+
+/* Ajout d'un style pour le composant FilterBar */
+.filter-bar {
+  width: 50%;
+  margin: 0 auto; /* Centrage horizontal */
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: relative; /* Ajout de position relative pour chevaucher le bas de header.png */
+  top: -50px; /* Ajustez selon votre besoin */
+  z-index: 999; /* Assurez-vous qu'il est en avant */
+}
+
+/* Style pour la navbar avec background noir */
+.navbar.scrolled {
+  background-color: black;
+  transition: background-color 0.3s ease; /* Animation de transition */
+}
+
+.explorer-content {
+  padding-top: 60px; /* Ajustez cette valeur en fonction de la hauteur de votre Navbar */
+}
+
+.explorer-content section {
+  margin-bottom: 30px;
+}
+
 .plantes-container {
-    display: flex;
-    flex-wrap: wrap; /* Pour permettre le retour à la ligne si nécessaire */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.plante {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .header-img {
+    display: none;
   }
-  
-  .plante {
-    width: 200px; /* Largeur de chaque plante */
-    margin: 0 10px 10px 0; /* Marge entre les plantes */
-  }
-  
+}
