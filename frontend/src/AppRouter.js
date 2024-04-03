@@ -8,7 +8,7 @@ function AppRouter() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/Explorer" replace />} />
+        <Route path="/" element={<Navigate to="/Login" replace />} />
         <Route path="/Explorer" element={<Explorer />} />
         <Route path="/Plantes" element={<Plantes />} />
         <Route path="/Login" element={<Login />} />
