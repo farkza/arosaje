@@ -19,7 +19,25 @@ body {
   padding: 20px;
   position: relative; /* Ajout de position relative pour chevaucher le bas de header.png */
   top: -50px; /* Ajustez selon votre besoin */
-  z-index: 999; /* Assurez-vous qu'il est en avant */
+}
+
+.nearYou {
+  margin-right: auto;
+  display: flex;
+}
+
+.nearYou-section {
+  display: flex;
+  align-items: center; /* Aligner les éléments verticalement au centre */
+}
+
+.show-all-button {
+  margin-left: auto; /* Déplacer le bouton "Afficher tout" complètement à droite */
+  background-color: transparent; /* Réinitialise la couleur de fond à transparent */
+  border: none; /* Supprime les bordures */
+  cursor: pointer; /* Curseur indiquant qu'il est cliquable */
+  color: #62A230;
+  font-size: 15px;
 }
 
 /* Style pour la navbar avec background noir */
@@ -29,26 +47,119 @@ body {
 }
 
 .explorer-content {
-  padding-top: 60px; /* Ajustez cette valeur en fonction de la hauteur de votre Navbar */
+  padding-top: 60px;
+  margin-left: 5%; /* Marge à gauche */
+  margin-right: 5%; /* Marge à droite */
 }
 
 .explorer-content section {
   margin-bottom: 30px;
 }
 
-.plantes-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+.categories {
+  margin-top: 30px; /* Marge en haut */
+  display: flex; /* Utilisation de flexbox */
+  flex-direction: column; /* Aligner les éléments en colonne */
+  align-items: flex-start; /* Alignement à gauche */
 }
 
-.plante {
+.categories h2 {
+  text-align: left; /* Alignement du texte à gauche */
+}
+
+.category-container {
+  display: flex; /* Utilisation de flexbox */
+}
+
+.category-block {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  border-radius: 10px;
+  margin-right: 10px; /* Marge entre les blocs */
+}
+
+.recent {
+  margin-top: 30px; /* Marge en haut */
+}
+
+/* CSS pour le bouton */
+.add-listing-button {
+  background-color: #A1D64E;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* CSS pour la popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* Ombre légère */
+}
+
+/* CSS pour le bouton de fermeture de la popup */
+.close {
+  position: absolute;
+  top: 10vw;
+  right: 30vw;
+  font-size: 20px;
+  cursor: pointer;
+  color: white; /* Couleur du texte en blanc */
+  z-index: 9999; /* Assure que le bouton de fermeture est au-dessus de la popup */
+}
+
+/* CSS pour empêcher le défilement lorsque la popup est ouverte */
+.popup-open {
+  overflow: hidden;
+}
+
+/* CSS pour les éléments du formulaire dans la popup */
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content label {
+  margin-bottom: 5px;
+}
+
+.popup-content input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
   border: 1px solid #ccc;
-  padding: 10px;
+  outline: none;
 }
 
-@media (max-width: 768px) {
-  .header-img {
-    display: none;
-  }
+.popup-content button {
+  background-color: #A1D64E;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
 }
+
+.popup-content button:hover {
+  background-color: #7DBB36; /* Changement de couleur au survol */
+}
+
