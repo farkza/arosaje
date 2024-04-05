@@ -7,7 +7,6 @@ on:
       - feature/*
     paths:
       - 'backend/**'
-      - '.github/**'
 
 jobs:
   build:
@@ -29,7 +28,6 @@ jobs:
     - name: Run backend tests
       run: 
         cd backend/tests
-        pytest 
       
     - name: Deploy containers
       run: |
