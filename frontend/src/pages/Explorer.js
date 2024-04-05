@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import FilterBar from '../components/FilterBar';
 import PlantesContainer from '../components/PlantesContainer';
-import '../css/Explorer.css';
+// import '../css/Explorer.css';
+import '../styles.css';
 import header from '../img/header.png';
 
 function Explorer() {
@@ -111,6 +112,8 @@ function Explorer() {
               Déposer une annonce
             </button>
           </div>
+        </section>
+        <section className="nearYou">
           <h2 className='nearYou'>Proche de chez vous</h2>
           <button onClick={toggleShowAll} className="show-all-button">
             {showAll ? 'Réduire' : 'Afficher tout'}
