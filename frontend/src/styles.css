@@ -237,3 +237,96 @@ input[type="password"]::placeholder {
 .login-button:hover {
   background-color: #8ccf7d;
 }
+
+/* Messagerie */
+/* Styles pour la page de messagerie */
+
+.messaging-container {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+  background-color: #181413;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #EDEDED;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar ul li a:hover {
+  background-color: #D3D3D3;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.message-list {
+  border: 1px solid #EAEAEA;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.message-item {
+  padding: 10px;
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.message-item:hover {
+  background-color: #F5F5F5;
+}
+
+.sender {
+  font-weight: bold;
+}
+
+.date {
+  color: #777;
+}
+
+.subject {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.message-preview {
+  margin-top: 5px;
+  color: #555;
+}
+
+.message-details {
+  border: 1px solid #EAEAEA;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #F9F9F9;
+}
+
+.footer {
+  background-color: #181413;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
