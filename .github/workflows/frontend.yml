@@ -19,7 +19,7 @@ jobs:
         npm install --prefix frontend
         
     - name: Run frontend tests
-      run: npm run test --prefix frontend --passWithNoTests
+      run: npm run test --passWithNoTests --prefix frontend
       
     - name: Deploy containers
       run: |
