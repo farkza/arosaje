@@ -7,7 +7,6 @@ on:
       - feature/*
     paths:
       - 'frontend/**'
-      - '.github/**'
 
 jobs:
   build:
