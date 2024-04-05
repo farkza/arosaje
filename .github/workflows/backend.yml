@@ -1,0 +1,35 @@
+name: CI/CD Backend
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+    paths:
+      - 'backend/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: |
+        pip install -r backend/requirements.txt
+        
+    - name: Run backend tests
+      run: 
+        cd backend/tests
+      
+    - name: Deploy containers
+      run: |
+        docker-compose up -d --build
+      # - docker-compose exec backend python manage.py migrate
