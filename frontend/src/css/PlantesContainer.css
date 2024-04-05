@@ -1,0 +1,53 @@
+.plantes-container {
+    margin-bottom: 20px;
+  }
+  
+  .show-all-button {
+    float: right;
+    margin-bottom: 10px;
+  }
+  
+  .plante-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .plante-card {
+    margin-bottom: 20px;
+    padding: 0 10px; /* Espacement entre les cartes */
+    box-sizing: border-box; /* Inclure le padding dans le calcul de la largeur */
+  }
+  
+  .plante-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .plante-img {
+    width: 100%; /* Prendre la largeur totale de la carte */
+    height: auto; /* Maintenir le rapport hauteur-largeur */
+  }
+  
+  @media (min-width: 768px) {
+    .plante-card {
+      width: calc((100% - 20px) / 5); /* Sur les écrans larges, chaque carte prend 20% de la largeur avec une marge de 5% à gauche et à droite */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .plante-card {
+      width: calc((100% - 20px) / 4); /* Sur les écrans moyens, chaque carte prend 25% de la largeur avec une marge de 5% à gauche et à droite */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .plante-card {
+      width: calc((100% - 20px) / 3); /* Sur les petits écrans, chaque carte prend 33.33% de la largeur avec une marge de 5% à gauche et à droite */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .plante-card {
+      width: calc((100% - 20px) / 2); /* Sur les téléphones, chaque carte prend 50% de la largeur avec une marge de 5% à gauche et à droite */
+    }
+  }
+  

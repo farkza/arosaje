@@ -1,45 +1,110 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0; /* Supprimer la marge par défaut du corps */
+}
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  color: #222455;
-  font-family: 'Josefin Sans', sans-serif; /* Utilisation de la police Josefin Sans */
+  position: fixed;
+  width: 100%; /* Utiliser 100% de la largeur */
+  top: 2vw;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+.navbar.scrolled {
+  background-color: black;
+  top: 0;
+  padding-top: 10px; /* Ajouter un espacement de 10% en haut */
+  padding-bottom: 10px; /* Ajouter un espacement de 10% en bas */
+}
+
+.navbar-left,
+.navbar-right {
+  margin-left: 10%; /* Ajouter une marge de 10% à gauche */
+  margin-right: 10%; /* Ajouter une marge de 10% à droite */
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
+  margin-right: auto;
 }
 
-.navbar-logo img {
-  width: 50px; /* Ajustez la taille du logo selon vos besoins */
-  height: auto; /* Ajustez la hauteur automatiquement en fonction de la largeur */
-  margin-right: 1rem; /* Ajoutez un espace à droite du logo */
-}
-
-.navbar-menu {
-  list-style: none;
-  padding: 0;
-  display: flex;
-}
-
-.navbar-menu li {
-  margin-right: 1rem; /* Ajoutez un espace entre les liens */
-}
-
-.navbar-menu li a {
-  color: #222455;
-  text-decoration: none;
-}
-
-.navbar-menu li a:hover {
+.logo {
+  width: 50px;
+  height: 50px;
   cursor: pointer;
+}
+
+.brand {
+  margin-left: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-center {
+  flex: 1;
+}
+
+.menu {
+  display: flex;
+  justify-content: center; /* Centrage horizontal des éléments */
+  list-style-type: none;
+  margin: 0; /* Supprimer les marges par défaut */
+  padding: 0; /* Supprimer les remplissages par défaut */
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+}
+
+.menu li a.selected {
+  font-weight: bold;
+  color: #A1D64E;
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.white-icon {
+  filter: invert(1); /* Inverser les couleurs de l'icône pour la rendre blanche */
+}
+
+.white-text {
+  color: white; /* Définir la couleur du texte en blanc */
+}
+
+/* Ajout de style pour le bouton de déconnexion */
+.navbar-right button {
+  background: none;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Style pour le bouton de déconnexion lors du défilement */
+.navbar-right button.scrolled {
+  color: white;
 }
