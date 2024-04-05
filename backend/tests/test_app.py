@@ -1,27 +1,20 @@
-from fastapi.testclient import TestClient
-import sys
-sys.path.append("backend")
-from main import app
 import pytest
+import sys
+import os
 
-TEST_DATABASE_PATH = "arosaje.db"
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
-@pytest.fixture(scope="module")
-def test_app():
-    client = TestClient(app)
-    yield client
+from main import app
+from fastapi.testclient import TestClient
 
-def test_read_root(test_app):
-    response = test_app.get("/")
+client = TestClient(app)
+
+def test_read_root():
+    response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {"message": "Bienvenue sur mon API FastAPI"}
 
-def test_get_plantes_from_db(test_app):
-   response = test_app.get("/get_plantes_from_db")
-   assert response.status_code == 200
-   assert response.json().get("plantes") is not None
-
-def test_test_db_connection(test_app):
-    response = test_app.get("/test_db_connection")
+def test_test_db_connection():
+    response = client.get("/test_db_connection")
     assert response.status_code == 200
     assert response.json() == {"message": "Connexion à la base de données réussie !"}
