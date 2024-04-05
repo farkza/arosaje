@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../css/Login.css';
+// import '../css/Login.css';
+import '../styles.css';
 import logo from '../img/arosaje.png';
 import userIcon from '../img/user.svg';
 import passwordIcon from '../img/pwd.svg';

@@ -164,3 +164,76 @@ body {
 .popup-content button:hover {
   background-color: #7DBB36;
 }
+
+/* Login page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #181413;
+}
+
+.login-content {
+  text-align: center;
+  color: white;
+  width: 80%;
+}
+
+.logo_login {
+  width: 100px;
+}
+
+.appName_login {
+  color: #A2D64D;
+  font-size: 40px;
+  margin-bottom: -10px;
+  font-weight: 900;
+}
+
+.secondary-title {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: calc(100% - 50px); 
+  padding: 15px;
+  border-radius: 25px;
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  outline: none;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: black;
+}
+
+.login-button {
+  background-color: #A2D64D;
+  width: 100%;
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.login-button:hover {
+  background-color: #8ccf7d;
+}
