@@ -27,7 +27,9 @@ jobs:
         pip install -r backend/requirements.txt
         
     - name: Run backend tests
-      run: pytest backend/tests
+      run: 
+        cd backend/tests
+        pytest 
       
     - name: Deploy containers
       run: |
