@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">arosaje</string>
+    <string name="title_activity_main">arosaje</string>
+    <string name="package_name">com.arosaje.app</string>
+    <string name="custom_url_scheme">com.arosaje.app</string>
+</resources>
